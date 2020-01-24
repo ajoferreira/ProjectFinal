@@ -11,6 +11,9 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { PerfilPage } from '../pages/perfil/perfil';
+import { UsuarioProvider } from '../providers/usuario/usuario';
+import { HttpClientModule } from '@angular/common/http';
+import { NewsPage } from '../pages/news/news';
 
 @NgModule({
   declarations: [
@@ -19,11 +22,13 @@ import { PerfilPage } from '../pages/perfil/perfil';
     ContactPage,
     HomePage,
     PerfilPage,
-    TabsPage
+    TabsPage,
+    NewsPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -32,12 +37,14 @@ import { PerfilPage } from '../pages/perfil/perfil';
     ContactPage,
     HomePage,
     PerfilPage,
-    TabsPage
+    TabsPage,
+    NewsPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    UsuarioProvider,
   ]
 })
 export class AppModule {}

@@ -5,46 +5,37 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-slides>
+  <ion-slides >
     <ion-slide>
       <img src="../../assets/imgs/1.jpg" style="width: 328px; height: 205.89px;">
-      <h1>Slide 1</h1>
+      <!-- <h1>Slide 1</h1> -->
     </ion-slide>
     <ion-slide>
       <img src="../../assets/imgs/2.jpg" style="width: 328px; height: 205.89px;">
-      <h1>Slide 2</h1>
+     <!--<h1>Slide 2</h1> -->
     </ion-slide>
     <ion-slide>
       <img src="../../assets/imgs/3.jpg" style="width: 328px; height: 205.89px;">
-      <h1>Slide 3</h1>
+      <!--<h1>Slide 3</h1> -->
     </ion-slide>
-  </ion-slides>
+  </ion-slides >
 
   <div class="centro">
     <h1>Notícias</h1>
-    
-          <div class="noticias">
-            <h2>Título</h2>
-            <p>Resumo da noticia pelo firebase e mostrado aqui.</p>
-            <p>Ver mais...</p>
-           </div>
-    
-           <div class="noticias">
-            <h2>Título</h2>
-            <p>Resumo da noticia pelo firebase e mostrado aqui.</p>
-            <p>Ver mais...</p>
-           </div>
-           
-           <div class="noticias">
-            <h2>Título</h2>
-            <p>Resumo da noticia pelo firebase e mostrado aqui.</p>
-            <p>Ver mais...</p>
-           </div>
-    
-           <div class="noticias">
-            <h2>Título</h2>
-            <p>Resumo da noticia pelo firebase e mostrado aqui.</p>
-            <p>Ver mais...</p>
-           </div>
-      </div>
+        
+    <ion-list>
+
+      <ion-item *ngFor="let n of news" (click)="detalhe(n)" >
+        <ion-thumbnail item-left>
+          <img src="{{n?.image}}">
+        </ion-thumbnail>
+        <h2>{{n?.title}}</h2>
+        <b></b>
+        <h3>{{n?.subtitle}}</h3>
+      
+      </ion-item>
+
+
+    </ion-list>
+  </div>        
 </ion-content>
