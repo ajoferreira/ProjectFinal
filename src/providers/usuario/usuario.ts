@@ -27,6 +27,19 @@ buscarNoticias() {
     })
   }
 
+buscarlocal() {
+    return new Promise((resolve) => {
+      this.http.get('http://localhost/psymed/api/list-places.php').subscribe(
+        (data) => {
+          resolve(data)
+        },
+        (err) => {
+          console.error(err)
+        },
+      )
+    })
+  }  
+
 buscarUserGithub(user) {
   return new Promise((resolve) => {
     this.http.get('https://api.github.com/users/${user}').subscribe(
